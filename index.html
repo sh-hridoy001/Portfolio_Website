@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366f1', // Indigo-500
+          },
+          boxShadow: {
+            'header': '0 4px 20px rgba(99, 102, 241, 0.2)',
+          },
+        },
+      },
+    };
+  </script>
+
+<style>
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .animate-bounce-slow {
+    animation: bounce-slow 3s infinite;
+  }
+</style>
+
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+
+  <!-- Smart Header -->
+  <header class="bg-white shadow-header px-6 py-4 flex items-center justify-between sticky top-0 z-50">
+    <!-- Logo -->
+    <div class="text-2xl font-extrabold text-primary tracking-wide animate-pulse">
+      MyPortfolio
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-8 font-medium">
+      <a href="#" id="o" class="text-gray-700 hover:text-primary transition">Home</a>
+      <a href="#" class="text-gray-700 hover:text-primary transition">Projects</a>
+      <a href="#" class="text-gray-700 hover:text-primary transition">Skills</a>
+      <a href="#" class="text-gray-700 hover:text-primary transition">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden text-3xl text-primary focus:outline-none">
+      ☰
+    </button>
+  </header>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50 md:hidden">
+    <div class="p-4">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold text-primary">Menu</h2>
+        <button id="close-btn" class="text-2xl text-gray-600">✕</button>
+      </div>
+      <nav class="flex flex-col space-y-4 text-lg">
+        <a href="#" id="overlay" class="hover:text-primary">Home</a>
+        <a href="#" id="projects" class="hover:text-primary">Projects</a>
+        <a href="#" id="skills" class="hover:text-primary">Skills</a>
+        <a href="#" id="contact" class="hover:text-primary">Contact</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Overlay -->
+  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40 md:hidden"></div>
+
+  <main class="p-6 mt-8 max-w-6xl mx-auto">
+    <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+  
+      <!-- Left: Text Info -->
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+          Hi, I'm <span class="text-primary">Sazzad Hossain Hridoy</span> 👋<br />
+          A Creative <span class="text-primary">Frontend Developer</span>
+        </h1>
+        <p class="text-lg text-gray-600 mb-6">
+          I specialize in building fast, responsive, and visually appealing websites using modern frontend tools like 
+          <span class="font-semibold text-gray-800">HTML</span>, 
+          <span class="font-semibold text-gray-800">Tailwind CSS</span>, and 
+          <span class="font-semibold text-gray-800">JavaScript</span>.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="#" class="bg-primary text-white px-6 py-3 rounded-full shadow-md hover:bg-indigo-600 transition duration-300">
+            📄 Download Resume
+          </a>
+          <a href="#contact" class="border-2 border-primary text-primary px-6 py-3 rounded-full hover:bg-primary hover:text-white transition duration-300">
+            📬 Contact Me
+          </a>
+        </div>
+      </div>
+  
+      <!-- Right: Image -->
+      <div class="flex-1">
+        <img src="programmer.png"
+             alt="Developer Illustration"
+             class="w-full max-w-md mx-auto animate-bounce-slow" />
+      </div>
+  
+    </div>
+  </main>
+  
+  <!--Project section-->
+
+  <!-- Projects Section -->
+<section id="projects" class="py-16 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-primary mb-12">🚀 My Projects</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      
+      <!-- Project Card 1 -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/400x200" alt="Project 1" class="rounded-lg mb-4 w-full">
+        <h3 class="text-xl font-semibold mb-2">E-commerce Book Store</h3>
+        <p class="text-gray-600 mb-4">
+          A responsive online bookstore built with HTML, Tailwind CSS and JavaScript. Features multiple pages and modern UI.
+        </p>
+        <a href="#" class="inline-block text-primary hover:underline">🔗 View Project</a>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/400x200" alt="Project 2" class="rounded-lg mb-4 w-full">
+        <h3 class="text-xl font-semibold mb-2">Smart Portfolio</h3>
+        <p class="text-gray-600 mb-4">
+          A sleek and animated portfolio website using HTML, Tailwind, and responsive design principles.
+        </p>
+        <a href="#" class="inline-block text-primary hover:underline">🔗 View Project</a>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/400x200" alt="Project 3" class="rounded-lg mb-4 w-full">
+        <h3 class="text-xl font-semibold mb-2">Login & Registration Page</h3>
+        <p class="text-gray-600 mb-4">
+          A modern UI login/signup form with smooth transitions and validation features built with Tailwind CSS.
+        </p>
+        <a href="#" class="inline-block text-primary hover:underline">🔗 View Project</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section with Icons -->
+<section id="skills" class="py-16 px-6 bg-gray-100">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-primary mb-12">🛠️ My Skills</h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+
+      <!-- Skill Item -->
+      <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-12 h-12 mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-700">HTML5</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-12 h-12 mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-700">CSS3</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" class="w-12 h-12 mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-700">Tailwind CSS</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-12 h-12 mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-700">JavaScript</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-12 h-12 mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-700">Git</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-12 h-12 mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-700">GitHub</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-12 h-12 mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-700">Python</p>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Responsive Design" class="w-12 h-12 mx-auto mb-2">
+        <p class="text-sm font-semibold text-gray-700">Responsive Design</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- About Me Section -->
+<section id="about" class="py-16 px-6 bg-white">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    
+    <!-- Profile Image -->
+    <div class="flex-1">
+      <img src="profile.jpg" alt="Sazzad Hossain Hridoy" class="rounded-2xl w-72 h-72 mx-auto shadow-lg object-cover">
+    </div>
+
+    <!-- About Text -->
+    <div class="flex-1 text-center md:text-left">
+      <h2 class="text-3xl font-bold text-primary mb-4">👨‍💻 About Me</h2>
+      <p class="text-gray-700 text-lg mb-4">
+        I'm <span class="font-semibold">Sazzad Hossain Hridoy</span>, a passionate front-end developer who loves turning creative ideas into beautiful websites.
+        I work mainly with <span class="font-semibold">HTML, Tailwind CSS, and JavaScript</span> to build fast, responsive, and user-friendly designs.
+      </p>
+      <p class="text-gray-600">
+        Currently, I’m studying Computer Science and focusing on Web Development. I enjoy learning new tools and building smart, modern web experiences.
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Contact Section - Smart & Attractive -->
+<section id="contact" class="py-20 px-6 bg-gradient-to-r from-blue-100 via-white to-pink-100">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-bold text-primary mb-6">📬 Let's Connect</h2>
+    <p class="text-gray-700 text-lg mb-12">I’m always open to chatting about web development, new ideas, or potential collaborations. Reach out below!</p>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <!-- Email Card -->
+      <div class="backdrop-blur-md bg-white/70 p-6 rounded-xl shadow-lg hover:scale-105 transition transform">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="w-10 h-10 mx-auto mb-3">
+        <h3 class="font-semibold text-lg text-gray-800 mb-1">Email</h3>
+        <p class="text-gray-600 text-sm">sazzadhossainhridoy961@gmail.com</p>
+      </div>
+
+      <!-- Location Card -->
+      <div class="backdrop-blur-md bg-white/70 p-6 rounded-xl shadow-lg hover:scale-105 transition transform">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" class="w-10 h-10 mx-auto mb-3">
+        <h3 class="font-semibold text-lg text-gray-800 mb-1">Location</h3>
+        <p class="text-gray-600 text-sm">Chittagong, Bangladesh</p>
+      </div>
+
+      <!-- GitHub Card -->
+      <div class="backdrop-blur-md bg-white/70 p-6 rounded-xl shadow-lg hover:scale-105 transition transform">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-10 h-10 mx-auto mb-3">
+        <h3 class="font-semibold text-lg text-gray-800 mb-1">GitHub</h3>
+        <a href="https://github.com/sh-hridoy001" target="_blank" class="text-blue-600 hover:underline text-sm">github.com/sh-hridoy001</a>
+      </div>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center gap-6 mt-4">
+      <a href="https://linkedin.com/in/sazzadhridoy" target="_blank" class="hover:scale-110 transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-8 h-8" alt="LinkedIn">
+      </a>
+      <a href="https://facebook.com/sazzadhridoy" target="_blank" class="hover:scale-110 transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="w-8 h-8" alt="Facebook">
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="bg-gray-900 text-white py-6 mt-12">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+    
+    <!-- Your Name -->
+    <div class="text-center md:text-left mb-4 md:mb-0">
+      <h3 class="text-xl font-semibold hover:text-primary transition">© 2025 Sazzad Hossain Hridoy</h3>
+    </div>
+
+    <!-- Quick Links or Scroll -->
+    <div class="flex gap-6 text-sm">
+      <a href="#home" class="hover:text-primary transition">Home</a>
+      <a href="#skills" class="hover:text-primary transition">Skills</a>
+      <a href="#projects" class="hover:text-primary transition">Projects</a>
+      <a href="#contact" class="hover:text-primary transition">Contact</a>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- JavaScript -->
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+  </script>
+  
+  <script src="script.js"></script>
+</body>
+</html>

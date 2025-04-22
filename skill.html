@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Portfolio</title>
+    <script>
+      // Load mode preference from localStorage
+      if (
+        localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {},
+        },
+        plugins: [],
+      };
+    </script>
+  </head>
+  <body class="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Header -->
+    <header class="flex items-center justify-between p-4 bg-gray-200 dark:bg-gray-800">
+      <h1 class="text-xl font-bold">Smart Portfolio</h1>
+      <button id="theme-toggle" class="bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded">
+        Toggle Dark/Light
+      </button>
+    </header>
+
+    <!-- Your existing content stays untouched below -->
+    <main class="p-4">
+      <!-- Example section -->
+      <section class="bg-gray-100 dark:bg-gray-800 p-4 rounded shadow">
+        <h2 class="text-2xl font-semibold mb-2">Welcome to My Portfolio</h2>
+        <p>This is a smart portfolio website. Explore the sections to know more.</p>
+      </section>
+    </main>
+
+    <script>
+      const themeToggleBtn = document.getElementById('theme-toggle');
+
+      themeToggleBtn.addEventListener('click', () => {
+        const html = document.documentElement;
+        if (html.classList.contains('dark')) {
+          html.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          html.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        }
+      });
+    </script>
+  </body>
+</html>
