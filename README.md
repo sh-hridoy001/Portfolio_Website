@@ -1,6 +1,6 @@
 # Sh Hridoy – Portfolio
 
-![Portfolio Hero](hero.jpg)
+![Portfolio Hero](https://github.com/sh-hridoy001/Portfolio_1/blob/main/Screenshot%202025-08-22%20122135.png)
 
 > Hi, I’m **Sh Hridoy**, and I’m a **Frontend Developer** passionate about building engaging and responsive user interfaces.
 
@@ -41,7 +41,7 @@ Some of my latest works (click images for details):
 - Let’s connect:
   - LinkedIn: [Your Link]
   - GitHub: [Your GitHub]
-  - Email: your.email@example.com
+  - Email: sazzadhossainhridoy961@gmail.com
 
 ---
 
@@ -54,11 +54,4 @@ Some of my latest works (click images for details):
 ---
 
 ##  Getting Started
-
-To run the website locally:
-
-```bash
-git clone https://github.com/yourusername/sh-hridoy-portfolio.git
-cd sh-hridoy-portfolio
-# Open index.html in your browser, or serve with a static server:
-npx serve .
+https://sh-hridoy-portfolio.netlify.app/
